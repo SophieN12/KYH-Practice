@@ -2,6 +2,7 @@ import random
 
 n = random.randint(1, 100)
 print("Jag tänker på en siffra mellan 1 och 100, gissa vilken!")
+antal = 0
 
 
 def ask_number():
@@ -10,9 +11,7 @@ def ask_number():
     return as_number
 
 
-def mainloop(n):
-    antal = 0
-
+def mainloop(n, antal):
     while True:
         as_number = ask_number()
         antal += 1
@@ -26,8 +25,9 @@ def mainloop(n):
         if as_number > n:
             print("Fel, min siffra är lägre... Testa igen!")
 
-    print("Dina gissningar:", antal)
-    return
+    return antal
 
 
-mainloop(n)
+antal = mainloop(n, antal)
+
+print("Dina gissningar:", antal)
