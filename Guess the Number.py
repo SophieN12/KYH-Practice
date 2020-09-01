@@ -1,18 +1,23 @@
 import random
 
-n = random.randint(1, 20)
-print("I'm thinking of a number between 1 and 20. Guess which?")
+antal = 0
+
+n = random.randint(1, 100)
+print("Jag tänker på en siffra mellan 1 och 100, gissa vilken!")
 
 while True:
-    text = input("Your guess: ")
+    text = input("Din gissning:")
     as_number = int(text)
+    antal += 1
 
     if as_number == n:
-        print("Correct!")
+        print("Korrekt!")
         break
 
     if as_number < n:
-        print("Wrong, my number is higher... Try again!")
+        print("Fel, min siffra är högre... Testa igen")
 
     if as_number > n:
-        print("Wrong, my number is lower... Try again!")
+        print("Fel, min siffra är lägre... Testa igen!")
+
+print("Dina gissningar:", antal)
