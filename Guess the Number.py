@@ -1,17 +1,20 @@
 import random
 
-print("Jag tänker på en siffra mellan 1 och 100, gissa vilken!")
 n = random.randint(1, 100)
-antal = 0
+print("Jag tänker på en siffra mellan 1 och 100, gissa vilken!")
 
 
-def mainloop():
-    global antal
+def ask_number():
+    text = input("Din gissning:")
+    as_number = int(text)
+    return as_number
+
+
+def mainloop(n):
+    antal = 0
 
     while True:
-        text = input("Din gissning:")
-        as_number = int(text)
-
+        as_number = ask_number()
         antal += 1
         if as_number == n:
             print("Korrekt!")
@@ -24,6 +27,7 @@ def mainloop():
             print("Fel, min siffra är lägre... Testa igen!")
 
     print("Dina gissningar:", antal)
+    return
 
 
-mainloop()
+mainloop(n)
