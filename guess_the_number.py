@@ -30,4 +30,4 @@ def mainloop(n, antal):
 
 antal = mainloop(n, antal)
 
-print("Dina gissningar:", antal)
+print(f"Dina gissningar: {antal}")
