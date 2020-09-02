@@ -1,8 +1,8 @@
 def main():
-    name = ""
-    name2 = ""
     name = input("Whats Your First Name?:")
     name2 = input("And your last name?:")
+    name = ""
+    name2 = ""
 
     if name and name2 != int:
         print(name[0], name2[0])
