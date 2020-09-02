@@ -1,10 +1,4 @@
-def main():
-    pass
-
-
-def add(a, b):
-    result = a + b
-    return result
+import calc
 
 
 def subtract(a, b):
@@ -32,17 +26,15 @@ def run():
     a = int(input("A="))
     b = int(input("B="))
     if answer == "1":
-        result = add(a, b)
+        result = calc.add(a, b)
     if answer == "2":
         result = subtract(a, b)
     if answer == "3":
-        result = multiply(a,b)
+        result = multiply(a, b)
     if answer == "4":
-        result = divide(a,b)
-        print("Result = " + str(result))
+        result = divide(a, b)
+    print("Result = " + str(result))
 
-
-run()
 
 if __name__ == "__main__":
-    main()
+    run()
