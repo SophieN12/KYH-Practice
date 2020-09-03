@@ -1,17 +1,20 @@
 import random
 
 
-def game():
+def game(how_many, max_value):
     correct_answers = 0
-    how_many = input("Hur många frågeställningar vill du svara på?:")
-    max_value = input("Högsta siffra?:")
-    max_value = int(max_value)
 
     for i in range(int(how_many)):
-        a = random.randint(1,max_value)
-        b = random.randint(1,max_value)
-        answer = input(f"{a}+{b}")
-        number = int(answer)
+        a = random.randint(1, max_value)
+        b = random.randint(1, max_value)
+
+        while True:
+            answer = input(f"{a}+{b}:")
+            try:
+                number = int(answer)
+                break
+            except ValueError:
+                print("Testa igen!")
 
         if number == a + b:
             print("Rätt!")
@@ -23,4 +26,18 @@ def game():
 
 
 if __name__ == '__main__':
-    game()
+    while True:
+        how_many = (input("Hur många frågor?:"))
+        try:
+            how_many = int(how_many)
+            break
+        except ValueError:
+            print("Inte ett heltal, försök igen!")
+    while True:
+        max_value = (input("Högsta siffra?:"))
+        try:
+            max_value = int(max_value)
+            break
+        except ValueError:
+            print("Inte ett heltal, försök igen!")
+    game(how_many, max_value)
