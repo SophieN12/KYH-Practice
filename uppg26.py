@@ -15,7 +15,8 @@ def main():
     print(F"Längd: {data['Runtime']}")
 
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 
