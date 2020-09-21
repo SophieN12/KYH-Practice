@@ -4,14 +4,15 @@ def reg_nummer():
 
 
 def main():
-    numbers = input("Mata in heltal med komma imellan:").split(",")
+    numbers = input("Mata in heltal med komma mellan:").split(",")
+    int_list = []
     for i in range(0, len(numbers)):
-        numbers[i] = int(numbers[i])
+        int_list.append(int(numbers[i]))
     print(f"Första talet: {numbers[0]}\nSista talet: {numbers[-1]}\n"
-          f"Summan av talen: {sum(numbers)}")
+          f"Summan av talen: {sum(int_list)}")
     numbers.reverse()
-    print(f"Talen baklänges:{numbers}")
-    #print(*numbers, sep=', ')
+    numbers1 = ", ".join(numbers)
+    print(f"Talen baklänges: {numbers1}")
 
 
 if __name__ == "__main__":
