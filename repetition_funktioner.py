@@ -10,15 +10,15 @@ def max_of_three(a, b, c):
 
 def sum_all_list(ls):
     total = 0
-    for i in range(0, 5):
-        total += ls[i]
+    for i in ls:
+        total += i
     return total
 
 
 def multiply_all_list(ls):
     product = 1
-    for i in range(0, 5):
-        product *= ls[i]
+    for i in ls:
+        product *= i
     return product
 
 
@@ -40,6 +40,7 @@ def caps(string):
 
 def in_range(value):
     result = []
+    correct = True or False
     for i in range(50, 100):
         result.append(i)
         if value in result:
@@ -47,4 +48,3 @@ def in_range(value):
         else:
             correct = False
     return correct
-
